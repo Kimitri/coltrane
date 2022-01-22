@@ -1,7 +1,12 @@
 #!/usr/bin/env php
 
 <?php
-require __DIR__.'/vendor/autoload.php';
+if (file_exists(__DIR__ . '/../../autoload.php')) {
+    // coltrane is part of a composer installation
+    require_once __DIR__ . '/../../autoload.php';
+} else {
+    require_once __DIR__ . './vendor/autoload.php';
+}
 
 define('COLTRANE_ROOT', __DIR__);
 
