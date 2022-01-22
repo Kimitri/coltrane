@@ -1,0 +1,87 @@
+#!/usr/bin/env php
+
+<?php
+require __DIR__.'/vendor/autoload.php';
+
+define('COLTRANE_ROOT', __DIR__);
+
+use Symfony\Component\Console\Application;
+
+use Coltrane\Command\DisplayP32DisplayP3;
+use Coltrane\Command\DisplayP32Hex;
+use Coltrane\Command\DisplayP32Hsl;
+use Coltrane\Command\DisplayP32Hsla;
+use Coltrane\Command\DisplayP32Rgb;
+use Coltrane\Command\DisplayP32Rgba;
+use Coltrane\Command\Hex2DisplayP3;
+use Coltrane\Command\Hex2Hex;
+use Coltrane\Command\Hex2Hsl;
+use Coltrane\Command\Hex2Hsla;
+use Coltrane\Command\Hex2Rgb;
+use Coltrane\Command\Hex2Rgba;
+use Coltrane\Command\Hsl2DisplayP3;
+use Coltrane\Command\Hsl2Hex;
+use Coltrane\Command\Hsl2Hsl;
+use Coltrane\Command\Hsl2Hsla;
+use Coltrane\Command\Hsl2Rgb;
+use Coltrane\Command\Hsl2Rgba;
+use Coltrane\Command\Hsla2DisplayP3;
+use Coltrane\Command\Hsla2Hex;
+use Coltrane\Command\Hsla2Hsl;
+use Coltrane\Command\Hsla2Hsla;
+use Coltrane\Command\Hsla2Rgb;
+use Coltrane\Command\Hsla2Rgba;
+use Coltrane\Command\Rgb2DisplayP3;
+use Coltrane\Command\Rgb2Hex;
+use Coltrane\Command\Rgb2Hsl;
+use Coltrane\Command\Rgb2Hsla;
+use Coltrane\Command\Rgb2Rgb;
+use Coltrane\Command\Rgb2Rgba;
+use Coltrane\Command\Rgba2DisplayP3;
+use Coltrane\Command\Rgba2Hex;
+use Coltrane\Command\Rgba2Hsl;
+use Coltrane\Command\Rgba2Hsla;
+use Coltrane\Command\Rgba2Rgb;
+use Coltrane\Command\Rgba2Rgba;
+use Coltrane\Command\Palettes;
+
+$app = new Application('Coltrane', '1.0.0');
+$app->add(new DisplayP32DisplayP3());
+$app->add(new DisplayP32Hex());
+$app->add(new DisplayP32Hsl());
+$app->add(new DisplayP32Hsla());
+$app->add(new DisplayP32Rgb());
+$app->add(new DisplayP32Rgba());
+$app->add(new Hex2DisplayP3());
+$app->add(new Hex2Hex());
+$app->add(new Hex2Hsl());
+$app->add(new Hex2Hsla());
+$app->add(new Hex2Rgb());
+$app->add(new Hex2Rgba());
+$app->add(new Hsl2DisplayP3());
+$app->add(new Hsl2Hex());
+$app->add(new Hsl2Hsl());
+$app->add(new Hsl2Hsla());
+$app->add(new Hsl2Rgb());
+$app->add(new Hsl2Rgba());
+$app->add(new Hsla2DisplayP3());
+$app->add(new Hsla2Hex());
+$app->add(new Hsla2Hsl());
+$app->add(new Hsla2Hsla());
+$app->add(new Hsla2Rgb());
+$app->add(new Hsla2Rgba());
+$app->add(new Rgb2DisplayP3());
+$app->add(new Rgb2Hex());
+$app->add(new Rgb2Hsl());
+$app->add(new Rgb2Hsla());
+$app->add(new Rgb2Rgb());
+$app->add(new Rgb2Rgba());
+$app->add(new Rgba2DisplayP3());
+$app->add(new Rgba2Hex());
+$app->add(new Rgba2Hsl());
+$app->add(new Rgba2Hsla());
+$app->add(new Rgba2Rgb());
+$app->add(new Rgba2Rgba());
+$app->add(new Palettes());
+
+$app->run();

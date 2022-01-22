@@ -1,0 +1,20 @@
+{
+  "name": "kimitri/coltrane",
+  "description": "Coltrane is a command line utility to transform CSS (and SVG) colors between different representations. It supports transformations between Display P3, hex, hsl, hsla, rgb and rgba.",
+  "homepage": "https://coltrane.abstractequipment.com",
+  "license": "MIT",
+  "authors": [
+    { "name": "Kimmo Tapala", "email": "kimitri@gmail.com" }
+  ],
+  "bin": [
+    "coltrane"
+  ],
+  "require": {
+    "symfony/console": "^6.0",
+    "spatie/color": "^1.5"
+  },
+  "autoload": {
+    "psr-4": { "Coltrane\\": "src" },
+    "classmap": ["src"]
+  }
+}
