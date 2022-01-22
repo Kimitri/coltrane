@@ -7,7 +7,7 @@
     { "name": "Kimmo Tapala", "email": "kimitri@gmail.com" }
   ],
   "bin": [
-    "coltrane"
+    "coltrane.php"
   ],
   "require": {
     "symfony/console": "^6.0",
