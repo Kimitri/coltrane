@@ -50,7 +50,7 @@ use Coltrane\Command\Rgba2Rgb;
 use Coltrane\Command\Rgba2Rgba;
 use Coltrane\Command\Palettes;
 
-$app = new Application('Coltrane', '1.0.0');
+$app = new Application('Coltrane', '1.0.2');
 $app->add(new DisplayP32DisplayP3());
 $app->add(new DisplayP32Hex());
 $app->add(new DisplayP32Hsl());
