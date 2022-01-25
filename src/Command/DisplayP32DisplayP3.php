@@ -17,8 +17,8 @@ use Coltrane\Color\DisplayP3;
 class DisplayP32DisplayP3 extends AbstractCommand {
   public function configure() {
     $this->setName('display-p32display-p3')
-        ->setDescription('Apply palette transformation to Display P3 color values.')
-        ->setHelp('Applies palette transformation to Display P3 color values.')
+        ->setDescription('Apply palette transformation to Display-P3 color values.')
+        ->setHelp('Applies palette transformation to Display-P3 color values.')
         ->addDefaultOptions()
         ->addOption('precision', 'd', InputOption::VALUE_OPTIONAL, 'Component value decimal precision. 0 = no precision limit', 0);
   }

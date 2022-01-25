@@ -17,8 +17,8 @@ use Coltrane\Color\DisplayP3;
 class Rgba2DisplayP3 extends AbstractCommand {
 	public function configure() {
 		$this->setName('rgba2display-p3')
-		    ->setDescription('Convert rgba color values to Display P3.')
-		    ->setHelp('Converts rgba color values (e.g. "rgba(121,14,212,.8)") to Display P3 values (e.g. "color(display-p3 0.1765 0.3059 0.4353)").')
+		    ->setDescription('Convert rgba color values to Display-P3.')
+		    ->setHelp('Converts rgba color values (e.g. "rgba(121,14,212,.8)") to Display-P3 values (e.g. "color(display-p3 0.1765 0.3059 0.4353)").')
 		    ->addDefaultOptions()
 		    ->addOption('precision', 'd', InputOption::VALUE_OPTIONAL, 'Component value decimal precision. 0 = no precision limit', 0);
 	}

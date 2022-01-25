@@ -1,6 +1,6 @@
 # Coltrane - A command line utility for CSS color transformations
 
-Coltrane is a command line utility to transform CSS (and SVG) colors between different representations. It supports transformations between Display P3, hex, hsl, hsla, rgb and rgba. Currently, it's one of the few tools that support the wide-gamut Display P3 colors.
+Coltrane is a command line utility to transform CSS (and SVG) colors between different representations. It supports transformations between Display-P3, hex, hsl, hsla, rgb and rgba. Currently, it's one of the few tools that support the wide gamut Display-P3 colors.
 
 ## Installation
 
@@ -27,6 +27,6 @@ Some color formats (in Coltrane's case these are hsla and rgba) support alpha ch
 
 ### Usage examples
 
-1. Read a CSS file with colors defined as hexadecimal values and output the same CSS with colors transformed into wide-gamut Display P3: `coltrane hex2display-p3 -i source.css -o wide-gamut.css`
-2. Take a CSS string from the macOS clipboard, transform all colors defined as `rgb()` into wide-gamut Display P3 and store the resulting CSS back to clipboard: `pbpaste | coltrane rgb2display-p3 | pbcopy`
+1. Read a CSS file with colors defined as hexadecimal values and output the same CSS with colors transformed into wide gamut Display-P3: `coltrane hex2display-p3 -i source.css -o wide-gamut.css`
+2. Take a CSS string from the macOS clipboard, transform all colors defined as `rgb()` into wide gamut Display-P3 and store the resulting CSS back to clipboard: `pbpaste | coltrane rgb2display-p3 | pbcopy`
 3. Take a CSS string from the macOS clipboard, transform all colors defined as hexadecimal values into `rgba()` using a static alpha value of 0.70, align them to the classic CGA palette and write the resulting CSS into a file: `pbpaste | coltrane hex2rgba -a .7 -p cga1-hi -o cga-is-still-cool.css`

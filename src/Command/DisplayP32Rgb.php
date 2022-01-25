@@ -17,8 +17,8 @@ use Coltrane\Color\DisplayP3;
 class DisplayP32Rgb extends AbstractCommand {
   public function configure() {
     $this->setName('display-p32rgb')
-        ->setDescription('Convert Display P3 color values to rgb.')
-        ->setHelp('Converts Display P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to decimal rgb values (e.g. "rgb(121,14,212)").')
+        ->setDescription('Convert Display-P3 color values to rgb.')
+        ->setHelp('Converts Display-P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to decimal rgb values (e.g. "rgb(121,14,212)").')
         ->addDefaultOptions();
   }
 

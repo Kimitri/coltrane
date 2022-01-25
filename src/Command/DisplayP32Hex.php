@@ -17,8 +17,8 @@ use Coltrane\Color\DisplayP3;
 class DisplayP32Hex extends AbstractCommand {
   public function configure() {
     $this->setName('display-p32hex')
-        ->setDescription('Convert Display P3 color values to hexadecimal.')
-        ->setHelp('Converts Display P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to hexadecimal values (e.g. "#2d4e6f").')
+        ->setDescription('Convert Display-P3 color values to hexadecimal.')
+        ->setHelp('Converts Display-P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to hexadecimal values (e.g. "#2d4e6f").')
         ->addDefaultOptions();
   }
 
