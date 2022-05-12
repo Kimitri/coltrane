@@ -37,7 +37,7 @@ abstract class AbstractCommand extends Command {
 	 * Defines the alpha option used with hsla and rgba colors.
 	 */
 	protected function addAlphaOption() {
-		return $this->addOption('alpha', 'a', InputOption::VALUE_OPTIONAL, 'Alpha value (between 0.0 and 1.0) or component (r, g or b) to use as alpha', 1);
+		return $this->addOption('alpha', 'a', InputOption::VALUE_OPTIONAL, 'Alpha value (between 0.0 and 1.0) or component (r, g, b or a) to use as alpha', 1);
 	}
 
 	/**
@@ -151,12 +151,14 @@ abstract class AbstractCommand extends Command {
 		$methods = [
 			'r' => 'red',
 			'g' => 'green',
-			'b' => 'blue'
+			'b' => 'blue',
+			'a' => 'alpha'
 		];
 		$alpha = strtolower($input->getOption('alpha'));
-		if (in_array($alpha, ['r', 'g', 'b'])) {
+		if (in_array($alpha, ['r', 'g', 'b', 'a'])) {
 			$method = $methods[$alpha];
-			$alpha = $color->$method() / 255;
+			$divisor = $alpha == 'a' ? 1 : 255;
+			$alpha = $color->$method() / $divisor;
 		}
 
 		return min(1, abs($alpha));

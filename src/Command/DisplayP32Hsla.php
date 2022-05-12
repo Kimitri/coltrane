@@ -18,7 +18,7 @@ class DisplayP32Hsla extends AbstractCommand {
   public function configure() {
     $this->setName('display-p32hsla')
         ->setDescription('Convert Display-P3 color values to hsla.')
-        ->setHelp('Converts Display-P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to decimal hsl values (e.g. "hsla(207,22%,10%,.8)").')
+        ->setHelp('Converts Display-P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to decimal hsl values (e.g. "hsla(207,22%,10%,0.8)").')
         ->addDefaultOptions()
         ->addAlphaOption();
   }

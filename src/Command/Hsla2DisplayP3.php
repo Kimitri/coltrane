@@ -18,7 +18,7 @@ class Hsla2DisplayP3 extends AbstractCommand {
 	public function configure() {
 		$this->setName('hsla2display-p3')
 		    ->setDescription('Convert hsla color values to Display-P3.')
-		    ->setHelp('Converts hsla color values (e.g. "hsla(207,22%,10%,.8)") to Display-P3 values (e.g. "color(display-p3 0.1765 0.3059 0.4353)").')
+		    ->setHelp('Converts hsla color values (e.g. "hsla(207,22%,10%,0.8)") to Display-P3 values (e.g. "color(display-p3 0.1765 0.3059 0.4353)").')
 		    ->addDefaultOptions()
 		    ->addOption('precision', 'd', InputOption::VALUE_OPTIONAL, 'Component value decimal precision. 0 = no precision limit', 0);
 	}

@@ -17,7 +17,7 @@ class Rgba2Hex extends AbstractCommand {
 	public function configure() {
 		$this->setName('rgba2hex')
 		    ->setDescription('Convert rgba color values to hexadecimal.')
-		    ->setHelp('Converts decimal rgba values (e.g. "rgba(121,14,212,.8)") to six-digit hexadecimal color values (e.g. "#2d4e6f").')
+		    ->setHelp('Converts decimal rgba values (e.g. "rgba(121,14,212,0.8)") to six-digit hexadecimal color values (e.g. "#2d4e6f").')
 		    ->addDefaultOptions();
 	}
 

@@ -17,7 +17,7 @@ class Hsl2Hsla extends AbstractCommand {
 	public function configure() {
 		$this->setName('hsl2hsla')
 		    ->setDescription('Convert hsl color values to hsla.')
-		    ->setHelp('Converts hsl color values (e.g. "hsl(207,22%,10%)") to decimal hsla values (e.g. "hsla(207,22%,10%,.8)").')
+		    ->setHelp('Converts hsl color values (e.g. "hsl(207,22%,10%)") to decimal hsla values (e.g. "hsla(207,22%,10%,0.8)").')
 		    ->addDefaultOptions()
 		    ->addAlphaOption();
 	}

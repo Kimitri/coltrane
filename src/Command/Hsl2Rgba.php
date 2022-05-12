@@ -17,7 +17,7 @@ class Hsl2Rgba extends AbstractCommand {
 	public function configure() {
 		$this->setName('hsl2rgba')
 		    ->setDescription('Convert hsl color values to rgba.')
-		    ->setHelp('Converts hsl color values (e.g. "hsl(207,22%,10%)") to decimal rgba values (e.g. "rgba(121,14,212,.8)").')
+		    ->setHelp('Converts hsl color values (e.g. "hsl(207,22%,10%)") to decimal rgba values (e.g. "rgba(121,14,212,0.8)").')
 		    ->addDefaultOptions()
 		    ->addAlphaOption();
 	}

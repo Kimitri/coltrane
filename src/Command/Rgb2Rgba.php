@@ -17,7 +17,7 @@ class Rgb2Rgba extends AbstractCommand {
 	public function configure() {
 		$this->setName('rgb2rgba')
 		    ->setDescription('Convert rgb color values to rgba.')
-		    ->setHelp('Converts rgb color values (e.g. "rgb(121,14,212)") to decimal rgba values (e.g. "rgba(121,14,212,.8)").')
+		    ->setHelp('Converts rgb color values (e.g. "rgb(121,14,212)") to decimal rgba values (e.g. "rgba(121,14,212,0.8)").')
 		    ->addDefaultOptions()
 		    ->addAlphaOption();
 	}

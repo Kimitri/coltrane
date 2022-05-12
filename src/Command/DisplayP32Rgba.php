@@ -18,7 +18,7 @@ class DisplayP32Rgba extends AbstractCommand {
   public function configure() {
     $this->setName('display-p32rgba')
         ->setDescription('Convert Display-P3 color values to rgba.')
-        ->setHelp('Converts Display-P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to decimal hsl values (e.g. "rgba(121,14,212,.8)").')
+        ->setHelp('Converts Display-P3 color values (e.g. "color(display-p3 0.1765 0.3059 0.4353)") to decimal hsl values (e.g. "rgba(121,14,212,0.8)").')
         ->addDefaultOptions()
         ->addAlphaOption();
   }

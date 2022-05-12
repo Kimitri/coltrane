@@ -17,7 +17,7 @@ class Rgba2Rgba extends AbstractCommand {
 	public function configure() {
 		$this->setName('rgba2rgba')
 		    ->setDescription('Apply palette and/or alpha transformation to rgba color values.')
-		    ->setHelp('Applies palette and/or alpha transformation to rgba color values (e.g. "rgba(121,14,212,.8)").')
+		    ->setHelp('Applies palette and/or alpha transformation to rgba color values (e.g. "rgba(121,14,212,0.8)").')
 		    ->addDefaultOptions()
 		    ->addAlphaOption();
 	}

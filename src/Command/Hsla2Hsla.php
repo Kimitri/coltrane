@@ -17,7 +17,7 @@ class Hsla2Hsla extends AbstractCommand {
 	public function configure() {
 		$this->setName('hsla2hsla')
 		    ->setDescription('Apply palette and/or alpha transformation to hsla color values.')
-		    ->setHelp('Applies palette and/or alpha transformation to hsla color values (e.g. "hsla(207,22%,10%,.8)").')
+		    ->setHelp('Applies palette and/or alpha transformation to hsla color values (e.g. "hsla(207,22%,10%,0.8)").')
 		    ->addDefaultOptions()
 		    ->addAlphaOption();
 	}

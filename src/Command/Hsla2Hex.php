@@ -17,7 +17,7 @@ class Hsla2Hex extends AbstractCommand {
 	public function configure() {
 		$this->setName('hsla2hex')
 		    ->setDescription('Convert hsla color values to hexadecimal.')
-		    ->setHelp('Converts decimal hsla values (e.g. "hsla(207,22%,10%,.8)") to six-digit hexadecimal color values (e.g. "#2d4e6f").')
+		    ->setHelp('Converts decimal hsla values (e.g. "hsla(207,22%,10%,0.8)") to six-digit hexadecimal color values (e.g. "#2d4e6f").')
 		    ->addDefaultOptions();
 	}
 

@@ -12,7 +12,7 @@ class DisplayP3 extends Rgb
         $matches = null;
         preg_match(Regex::DISPLAYP3, $string, $matches);
 
-        $channels = array_filter(explode(' ', $matches[1]));
+        $channels = array_values(array_filter(explode(' ', $matches[1])));
         [$red, $green, $blue] = array_map(function($value) {
             $float = floatval(trim($value));
             return $float > 1 ? 1 : $float;

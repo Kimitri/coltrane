@@ -17,7 +17,7 @@ class Hex2Rgba extends AbstractCommand {
 	public function configure() {
 		$this->setName('hex2rgba')
 		    ->setDescription('Convert hexadecimal color values to rgba.')
-		    ->setHelp('Converts hexadecimal color values (e.g. "#3d4" or "#2d4e6f") to decimal rgba values (e.g. "rgba(121,14,212,.8)").')
+		    ->setHelp('Converts hexadecimal color values (e.g. "#3d4" or "#2d4e6f") to decimal rgba values (e.g. "rgba(121,14,212,0.8)").')
 		    ->addDefaultOptions()
 		    ->addAlphaOption();
 	}
