@@ -17,8 +17,8 @@ use Coltrane\Color\DisplayP3a;
 class DisplayP3a2DisplayP3a extends AbstractCommand {
   public function configure() {
     $this->setName('display-p3a2display-p3a')
-        ->setDescription('Apply palette transformation to Display-P3a color values.')
-        ->setHelp('Applies palette transformation to Display-P3a color values.')
+        ->setDescription('Apply palette and/or alpha transformation to Display-P3a color values.')
+        ->setHelp('Applies palette and/or alpha transformation to Display-P3a color values (e.g. "color(display-p3 0.1765 0.3059 0.4353 / 0.8)").')
         ->addDefaultOptions()
         ->addOption('precision', 'd', InputOption::VALUE_OPTIONAL, 'Component value decimal precision. 0 = no precision limit', 0)
         ->addAlphaOption();
