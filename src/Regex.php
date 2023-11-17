@@ -1,6 +1,13 @@
 <?php
 namespace Coltrane;
 
+/**
+ * Class Regex
+ *
+ * Regular expressions for matching color strings
+ *
+ * @package Coltrane
+ */
 class Regex {
   public const DISPLAYP3 = '/color\( *display-p3 *([\.\d]* *[\.\d]* *[\.\d]* *) *\)/i';
   public const DISPLAYP3A = '/color\( *display-p3 *([\.\d]* *[\.\d]* *[\.\d]* *\/ *[\.\d]* *) *\)/i';

@@ -11,6 +11,9 @@ use Coltrane\Command\AbstractCommand;
 use Coltrane\Regex;
 
 class Rgba2Hsla extends AbstractCommand {
+  /**
+   * Configures the command
+   */
 	public function configure(): void {
 		$this->setName('rgba2hsla')
 		    ->setDescription('Convert rgba color values to hsla.')
@@ -19,6 +22,13 @@ class Rgba2Hsla extends AbstractCommand {
 		    ->addAlphaOption();
 	}
 
+  /**
+   * Transforms the input source code.
+   *
+   * @param  InputInterface $input  Command input.
+   * @param  string         $source Input source code.
+   * @return string                 Transformed source code.
+   */
 	public function transform(InputInterface $input, string $source): string {
 		return preg_replace_callback(Regex::RGBA, function(array $matches) use ($input) {
 			if (count($matches) > 1) {

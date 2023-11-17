@@ -1,19 +1,17 @@
 <?php
 namespace Coltrane\Command;
 
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
 
 use Spatie\Color\Rgba;
 
 use Coltrane\Command\AbstractCommand;
 use Coltrane\Regex;
-use Coltrane\StringManipulator;
 
 class Rgba2Hex extends AbstractCommand {
+  /**
+   * Configures the command
+   */
 	public function configure() {
 		$this->setName('rgba2hex')
 		    ->setDescription('Convert rgba color values to hexadecimal.')
@@ -21,7 +19,14 @@ class Rgba2Hex extends AbstractCommand {
 		    ->addDefaultOptions();
 	}
 
-	public function transform(InputInterface $input, string $source) {
+  /**
+   * Transforms the input source code.
+   *
+   * @param  InputInterface $input  Command input.
+   * @param  string         $source Input source code.
+   * @return string                 Transformed source code.
+   */
+	public function transform(InputInterface $input, string $source): string {
 		return preg_replace_callback(Regex::RGBA, function(array $matches) use ($input) {
 			if (count($matches) > 1) {
 				$color = Rgba::fromString('rgba(' . $matches[1] . ')');

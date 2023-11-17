@@ -12,6 +12,9 @@ use Coltrane\Regex;
 use Coltrane\Color\DisplayP3a;
 
 class Rgba2DisplayP3a extends AbstractCommand {
+  /**
+   * Configures the command
+   */
 	public function configure(): void {
 		$this->setName('rgba2display-p3a')
 		    ->setDescription('Convert rgba color values to Display-P3a.')

@@ -11,7 +11,6 @@
 namespace Coltrane\Command;
 
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -25,8 +24,10 @@ abstract class AbstractCommand extends Command {
 	
 	/**
 	 * Defines the default command line options.
+   *
+   * @return AbstractCommand
 	 */
-	protected function addDefaultOptions() {
+	protected function addDefaultOptions(): self {
 		return $this
 			->addOption('infile', 'i', InputOption::VALUE_OPTIONAL, 'Input file')
 			->addOption('outfile', 'o', InputOption::VALUE_OPTIONAL, 'Output file')
@@ -35,8 +36,10 @@ abstract class AbstractCommand extends Command {
 
 	/**
 	 * Defines the alpha option used with hsla and rgba colors.
+   *
+   * @return AbstractCommand
 	 */
-	protected function addAlphaOption() {
+	protected function addAlphaOption(): self {
 		return $this->addOption('alpha', 'a', InputOption::VALUE_OPTIONAL, 'Alpha value (between 0.0 and 1.0) or component (r, g, b or a) to use as alpha', 1);
 	}
 
@@ -49,7 +52,7 @@ abstract class AbstractCommand extends Command {
 	 * @param  InputInterface $input Command input.
 	 * @return string                Input source code.
 	 */
-	protected function readSource(InputInterface $input) {
+	protected function readSource(InputInterface $input): string {
 		$infile = !empty($input->getOption('infile')) ? $input->getOption('infile') : null;
 		$inputStream = ($input instanceof StreamableInputInterface) ? $input->getStream() : STDIN;
 
@@ -73,9 +76,9 @@ abstract class AbstractCommand extends Command {
 	 * @param  InputInterface  $input  Command input.
 	 * @param  OutputInterface $output Command output.
 	 * @param  string          $result Resulting string to write to output.
-	 * @return int                  	 Number of bytes written.
+	 * @return int|bool                Number of bytes written or false if fwrite fails.
 	 */
-	protected function writeResult(InputInterface $input, OutputInterface $output, string $result) {
+	protected function writeResult(InputInterface $input, OutputInterface $output, string $result): int|bool {
 		$outfile = !empty($input->getOption('outfile')) ? $input->getOption('outfile') : null;
 		$stream = $outfile ? fopen($outfile, 'w') : $output->getStream();
 
@@ -91,7 +94,7 @@ abstract class AbstractCommand extends Command {
 	/**
    * {@inheritdoc}
    */
-	public function execute(InputInterface $input, OutputInterface $output) {
+	public function execute(InputInterface $input, OutputInterface $output): int {
 		$source = $this->readSource($input);
 		$result = $this->transform($input, $source);
 
@@ -106,7 +109,7 @@ abstract class AbstractCommand extends Command {
 	 * @param  string         $source Source code.
 	 * @return string                 Source after transformations.
 	 */
-	public function transform(InputInterface $input, string $source) {
+	public function transform(InputInterface $input, string $source): string {
 		return $source;
 	}
 
@@ -147,7 +150,7 @@ abstract class AbstractCommand extends Command {
 	 * @param  Color          	$color Color.
 	 * @return float 									 Alpha value (0..1).
 	 */
-	public function alpha(InputInterface $input, Color $color) {
+	public function alpha(InputInterface $input, Color $color): float {
 		$methods = [
 			'r' => 'red',
 			'g' => 'green',

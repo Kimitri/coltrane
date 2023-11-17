@@ -1,21 +1,19 @@
 <?php
 namespace Coltrane\Command;
 
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
 
-use Spatie\Color\Rgb;
 
 use Coltrane\Command\AbstractCommand;
 use Coltrane\Regex;
-use Coltrane\StringManipulator;
 use Coltrane\Color\DisplayP3;
 
 class DisplayP32DisplayP3 extends AbstractCommand {
-  public function configure() {
+  /**
+   * Configures the command
+   */
+  public function configure(): void {
     $this->setName('display-p32display-p3')
         ->setDescription('Apply palette transformation to Display-P3 color values.')
         ->setHelp('Applies palette transformation to Display-P3 color values.')
@@ -23,7 +21,14 @@ class DisplayP32DisplayP3 extends AbstractCommand {
         ->addOption('precision', 'd', InputOption::VALUE_OPTIONAL, 'Component value decimal precision. 0 = no precision limit', 0);
   }
 
-  public function transform(InputInterface $input, string $source) {
+  /**
+   * Transforms the input source code.
+   *
+   * @param  InputInterface $input  Command input.
+   * @param  string         $source Input source code.
+   * @return string                 Transformed source code.
+   */
+  public function transform(InputInterface $input, string $source): string {
     return preg_replace_callback(Regex::DISPLAYP3, function(array $matches) use ($input) {
       if (count($matches) > 1) {
         $original = DisplayP3::fromString('color(display-p3 ' . $matches[1] . ')');
