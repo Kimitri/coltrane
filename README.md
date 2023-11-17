@@ -23,7 +23,7 @@ Coltrane comes with a bunch of retro themed palettes from the [Lospec website](h
 Some color formats (in Coltrane's case these are display-p3a, hsla and rgba) support alpha channels and Coltrane provides a few ways to specify target alpha values. Alpha values range from 0 (fully transparent) to 1 (fully opaque). Alpha can be set using the `--alpha` (`-a`) option and there are two different modes of operation:
 
 - Use a static alpha value (e.g. `--alpha .8` to use alpha value of 0.80).
-- Map alpha to the R, G, B or alpha channel of the input color (e.g. `--alpha r` to use the relative red channel value as alpha). Please note that R, G and B channels are also used with hsla colors. To preserve the original alpha of the input color, make sure to pass the `-a a` option.
+- Map alpha to the R, G, B or alpha channel of the input color (e.g. `--alpha r` to use the relative red channel value as alpha). Please note that R, G and B channels are also used with hsla colors. (Alpha channel handling was changed in version 1.2.0 and the original alpha is now preserved by default.)
 
 ### Usage examples
 
