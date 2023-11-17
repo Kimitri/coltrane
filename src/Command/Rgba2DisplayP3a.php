@@ -1,21 +1,18 @@
 <?php
 namespace Coltrane\Command;
 
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
 
 use Spatie\Color\Rgba;
+use Spatie\Color\Color;
 
 use Coltrane\Command\AbstractCommand;
 use Coltrane\Regex;
-use Coltrane\StringManipulator;
 use Coltrane\Color\DisplayP3a;
 
 class Rgba2DisplayP3a extends AbstractCommand {
-	public function configure() {
+	public function configure(): void {
 		$this->setName('rgba2display-p3a')
 		    ->setDescription('Convert rgba color values to Display-P3a.')
 		    ->setHelp('Converts rgba color values (e.g. "rgba(121,14,212,0.8)") to Display-P3a values (e.g. "color(display-p3 0.1765 0.3059 0.4353 / 0.8)").')
@@ -24,7 +21,14 @@ class Rgba2DisplayP3a extends AbstractCommand {
 		    ->addAlphaOption();
 	}
 
-	public function transform(InputInterface $input, string $source) {
+  /**
+   * Transforms the input source code.
+   *
+   * @param  InputInterface $input  Command input.
+   * @param  string         $source Input source code.
+   * @return string                 Transformed source code.
+   */
+	public function transform(InputInterface $input, string $source): string {
 		return preg_replace_callback(Regex::RGBA, function(array $matches) use ($input) {
 			if (count($matches) > 1) {
 				$color = Rgba::fromString('rgba(' . $matches[1] . ')');
@@ -43,5 +47,27 @@ class Rgba2DisplayP3a extends AbstractCommand {
 
 			return $matches[0];
 		}, $source);
+	}
+
+	/**
+	 * Defines the alpha option used with hsla and rgba colors.
+	 */
+	protected function addAlphaOption(): self {
+		return $this->addOption('alpha', 'a', InputOption::VALUE_OPTIONAL, 'Alpha value (between 0.0 and 1.0) or component (r, g, b or a) to use as alpha', null);
+	}
+
+	/**
+	 * Gets the desired alpha value.
+	 * 
+	 * @param  InputInterface 	$input Command input.
+	 * @param  Color          	$color Color.
+	 * @return float 									 Alpha value (0..1).
+	 */
+	public function alpha(InputInterface $input, Color $color): float {
+    if ($input->getOption('alpha')) {
+      return parent::alpha($input, $color);
+    }
+    
+    return floatval($color->alpha());
 	}
 }

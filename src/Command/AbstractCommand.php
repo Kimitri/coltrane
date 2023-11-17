@@ -115,9 +115,9 @@ abstract class AbstractCommand extends Command {
 	 * 
 	 * @param  InputInterface 	$input Command input.
 	 * @param  Color          	$color Color to align to palette.
-	 * @return Spatie\Color\Hex 			 Color from palette.
+	 * @return Spatie\Color     Color from palette.
 	 */
-	public function applyPalette(InputInterface $input, Color $color) {
+	public function applyPalette(InputInterface $input, Color $color): Color {
 		if ($this->palette == null) {
 			$palette_opt = !empty($input->getOption('palette')) ? $input->getOption('palette') : null;
 
